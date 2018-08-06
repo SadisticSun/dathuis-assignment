@@ -1,22 +1,11 @@
 const express = require('express')
 const app = express()
 const port = 8080
+const dummyData = require('./data/clients.json')
 
 
-app.get('/api/routes', (req, res) => {
-    const routes = [
-        {
-            id: 1,
-            name: 'Home',
-            path: '/'
-        },
-        {
-            id: 2,
-            name: 'About',
-            path: '/about'
-        }
-    ]
-    res.json(routes)
+app.get('/api/data', (req, res) => {
+    res.send(dummyData)
 })
 
 app.listen(port, () => {

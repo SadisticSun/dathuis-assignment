@@ -20,3 +20,28 @@ body {
 .list-unstyled {
   list-style: none;
 }
+
+.search-section {
+  width: 100%;
+  height: 40vh;
+  background: lightcyan;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  padding: 0.7em 1.6em;
+  border: 2px solid skyblue;
+  border-radius: 0.5em;
+  font-size: 150%;
+  color: skyblue;
+}
+.search-input::placeholder{
+  color: skyblue;
+}
+
+.search-input:focus {
+  appearance: none;
+  border: 0.5em deepskyblue;
+}
