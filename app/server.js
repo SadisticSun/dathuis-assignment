@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const port = 8080
 const express_graphql = require('express-graphql')
-const rootResolver = require('./graphql/resolvers/root')
 const schema = require('./graphql/schema')
 
 app.use('/graphql', express_graphql({

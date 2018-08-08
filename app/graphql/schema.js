@@ -1,11 +1,14 @@
+const searchResolver = require('./resolvers');
+
 const {
     GraphQLObjectType,
     GraphQLString,
     GraphQLInt,
-    GraphQLSchema
+    GraphQLSchema,
+    GraphQLList
 } = require('graphql')
 
-const ClientData = require('../data/clients.json')
+
 
 // Person Type
 const ClientType = new GraphQLObjectType({
@@ -37,10 +40,10 @@ const ClientType = new GraphQLObjectType({
 
 // Root Query
 const RootQuery = new GraphQLObjectType({
-    name: 'RootQueryType',
+    name: 'Root',
     fields: {
-        client: {
-            type: ClientType,
+        clients: {
+            type: new GraphQLList(ClientType),
             args: {
                 search: {
                     type: GraphQLString
@@ -50,26 +53,13 @@ const RootQuery = new GraphQLObjectType({
                 }
             },
             resolve(parentValue, args) {
-                const searchQuery = args.search.toLowerCase();
-                console.log('SEARCHING FOR: ' + searchQuery)
-
-                let results = [];
-                for (let i = 0; i < args.limit; i++) {
-                    let formattedFirstName = ClientData[i].first_name.toLowerCase();
-                    let formattedLastName = ClientData[i].last_name.toLowerCase();
-                    let formattedOrigin = ClientData[i].origin.toLowerCase();
-
-                    if (formattedFirstName.indexOf(searchQuery) > -1 ||
-                        formattedLastName.indexOf(searchQuery) > -1 ||
-                        formattedOrigin.indexOf(searchQuery) > -1) {
-                        results.push(ClientData[i])
-                    }
-                }
-                console.log('RESULTS: ' + results)
+                return searchResolver(parentValue, args)
             }
         }
     }
 })
+
+
 
 module.exports = new GraphQLSchema({
     query: RootQuery
