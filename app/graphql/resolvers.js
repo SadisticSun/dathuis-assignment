@@ -5,6 +5,8 @@ function assertNotNull(val) {
 }
 
 function searchResolver(parent, args) {
+    if (args.search.length < 1) return;
+
     const searchQuery = args.search.toLowerCase();
     const searchLimit = args.limit || 10;
 
@@ -22,6 +24,12 @@ function searchResolver(parent, args) {
             results.push(ClientData[i])
         }
     }
+
+    results = results.map(result => ({
+        ...result,
+        id: result.id.$oid,
+    }));
+
     return results;
 }
 

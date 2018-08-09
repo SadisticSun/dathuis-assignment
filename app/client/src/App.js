@@ -1,20 +1,32 @@
 import React, { Component } from "react";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+
+// Components
+import SearchSection from "./components/SearchSection/SearchSection";
+
+// CSS
 import "./App.css";
-import SearchInput from "./components/SearchInput/SearchInput";
-// import Header from './components/partials/header/header'
+
+// Apollo Client setup
+const client = new ApolloClient({
+    uri: "http://localhost:8080/graphql"
+});
 
 class App extends Component {
     render() {
         return (
-            <div className="App">
-                <main>
-                    <article>
-                        <section className="search-section">
-                            <SearchInput />
-                        </section>
-                    </article>
-                </main>
-            </div>
+            <ApolloProvider client={client}>
+                <div className="App">
+                    <main>
+                        <article>
+                            
+                                <SearchSection />
+                           
+                        </article>
+                    </main>
+                </div>
+            </ApolloProvider>
         );
     }
 }

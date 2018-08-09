@@ -9,7 +9,6 @@ const {
 } = require('graphql')
 
 
-
 // Person Type
 const ClientType = new GraphQLObjectType({
     name: 'Client',
