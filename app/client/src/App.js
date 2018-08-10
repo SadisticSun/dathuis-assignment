@@ -10,7 +10,7 @@ import "./App.css";
 
 // Apollo Client setup
 const client = new ApolloClient({
-    uri: "http://localhost:8080/graphql"
+    uri: "http://localhost:3001/graphql"
 });
 
 class App extends Component {
@@ -20,9 +20,7 @@ class App extends Component {
                 <div className="App">
                     <main>
                         <article>
-                            
-                                <SearchSection />
-                           
+                            <SearchSection />
                         </article>
                     </main>
                 </div>

@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const express_graphql = require('express-graphql');
 const schema = require('./graphql/schema');
-const port = 8080;
+const port = 3001;
 
 // Allow cross-origin requests
 app.use(cors());

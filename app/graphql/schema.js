@@ -48,7 +48,7 @@ const RootQuery = new GraphQLObjectType({
                     type: GraphQLString
                 },
                 limit: {
-                    type: GraphQLInt
+                    type: GraphQLString
                 }
             },
             resolve(parentValue, args) {
