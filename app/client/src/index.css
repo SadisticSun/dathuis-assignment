@@ -43,6 +43,8 @@ article,
 .logo-block {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   padding-top: 2em;
 }
 
@@ -68,7 +70,6 @@ article,
 }
 
 .search-section {
-  height: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,23 +86,27 @@ article,
 .search-form {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .search-input,
 .search-limit {
+  text-align: center;
   padding: 0.7em 1.6em;
   border: 2px solid #2bcbba;
   background: #4b6584;
   border-radius: 0.5em;
-  font-size: 150%;
+  font-size: 2vw;
   color: white;
-  margin-top: 10vh;
-  margin-bottom: 2em;
   transition: 0.2s;
 }
 
+.search-input {
+  width: 30vw;
+}
 .search-limit {
-  margin-left: 1em;
+  width: 10vw;
 }
 
 .search-input::placeholder, 
@@ -121,25 +126,23 @@ article,
 .search-results-container {
   height: 100%;
   width: 100%;
-  padding-top: 1em;
+  padding: 1em;
 }
 
 .search-results {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 1em;
-  justify-items: center;
-  align-items: start;
-  grid-template-areas: ". a .";
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   transition: 1s;
 }
 
 .default {
-  grid-column: 2/4;
   text-align: center;
 }
 
 .client-card {
+  margin-right: 1em;
+  margin-bottom: 1em;
   min-width: 15em;
   padding: 1em;
   background: #d1d8e0;
