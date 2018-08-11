@@ -1,6 +1,10 @@
-# Node-Express-React Starter Kit
-A simple boilerplate application for starting a new React project with an Express backend.
+# DatHuis Assignment
+## About
 
+This repository contains the assignment from DatHuis, featuring:
+A search-as-you-type app built with React and GraphQL.
+
+---
 ## Install instructions
 1. Clone this repo.
 2. Navigate to repo folder and install dependencies for server:
@@ -23,27 +27,28 @@ A simple boilerplate application for starting a new React project with an Expres
     ```sh
     npm run client
     ```
-7. Start building!
+7. Locations:
+   
+   - The App client will be running at `http://localhost:3000`
+   - The server will be running at `http://localhost:3001`
 
-## What's included?
+---
+## Tech Stack
 
-* NodeJS.
-* Express backend, serving as API.
-* React, JSX, ES6, and Flow syntax support.
-* Language extras beyond ES6 like the object spread operator.
-* Autoprefixed CSS, so you don’t need -webkit- or other prefixes.
-* A fast interactive unit test runner with built-in support for coverage reporting.
-* A live development server that warns about common mistakes.
-* A build script to bundle JS, CSS, and images for production, with hashes and sourcemaps.
-* An offline-first service worker and a web app manifest, meeting all the Progressive Web App criteria.
-
-## What's NOT included?
-Include these yourself depending on the projects needs.
-* A database
-* Serverside Rendering
-* Redux
-* SASS/LESS/Stylus
-
-## License
-This project is licensed under the MIT License.
-
+I used the following solutions
+- Node.js
+- Express.js
+- GraphQL
+- React.js
+  
+### Dependencies
+- Server
+    - express
+    - cors
+    - express_graphql
+- App
+    - React (latest), with `create-react-app`
+    - react-apollo
+    - apollo-boost
+  
+   
